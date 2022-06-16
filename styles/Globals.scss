@@ -1,0 +1,87 @@
+@use "./Typography.scss" as *;
+@use "./LocomotiveScroll.scss";
+@use "../styles/utils/Vars.module.scss" as *;
+@use "../styles/utils/Mixins.module.scss" as *;
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: $font-Medium;
+    font-size: 12px;
+    overflow-x: hidden;
+    background: $saint-white;
+}
+
+.App__Wrapper {
+    background: $void-black;
+    color: $saint-white;
+}
+
+main {
+    padding-top: 15vh;
+    min-height: 100vh;
+}
+
+.Container {
+    width: 100%;
+    padding: 0 5%;
+}
+
+.Custom__Cursor {
+    width: 1rem;
+    height: 1rem;
+    background: $saint-white;
+    z-index: 999;
+    pointer-events: none;
+    position: absolute;
+    border-radius: 50%;
+    transition: 0.3s all ease;
+    transition-property: transform;
+
+    span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        @include flex(center, center);
+        background: none;
+        font-family: $font-Medium;
+    }
+}
+
+// Mixin
+@media screen and(min-width:768px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+}
+
+@media screen and(min-width:1280px) {
+    html,
+    body {
+        font-size: 16px;
+    }
+}
+
+@media screen and(min-width:3080px) {
+    html,
+    body {
+        font-size: 24px;
+    }
+}
+
+@media screen and(hover:none) {
+    .Custom__Cursor {
+        display: none;
+    }
+}

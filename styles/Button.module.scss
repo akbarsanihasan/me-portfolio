@@ -1,0 +1,71 @@
+@use "../styles/utils/Vars.module.scss" as *;
+@use "../styles/utils/Mixins.module.scss" as *;
+
+.Button {
+    min-width: 6rem;
+    height: 2.5rem;
+    font-family: $font-Medium;
+    background: transparent;
+    outline: none;
+    border: 0.067rem solid $saint-white;
+    border-radius: 3rem;
+    color: $saint-white;
+    padding: 0 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    @include flex(center, center);
+
+    .Button__Wrapper {
+        font: inherit;
+        height: 2rem;
+        z-index: 1;
+        pointer-events: none;
+        @include flex(space-between, center);
+
+        .ArrowIcon {
+            width: 1em;
+            fill: $saint-white;
+            margin-left: 1rem;
+            overflow: hidden;
+        }
+    }
+
+    &:hover {
+        * {
+            color: $void-black;
+        }
+
+        .Button__Wrapper {
+            .ArrowIcon {
+                fill: $void-black;
+            }
+        }
+
+        &:after {
+            top: 0;
+            animation: 0.3s buttonHover cubic-bezier(0.69, 0.05, 0.32, 0.97);
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: $saint-white;
+        top: -100%;
+        transition: 0.3s top cubic-bezier(0.69, 0.05, 0.32, 0.97);
+    }
+}
+
+@keyframes buttonHover {
+    from {
+        top: 100%;
+    }
+    to {
+        top: 0;
+    }
+}

@@ -1,0 +1,26 @@
+@use "sass:map";
+
+$font-Regular: "epilogue-Regular", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+$font-Medium: "epilogue-Medium", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+$font-Bold: "epilogue-Bold", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+// Color
+$void-black: #080a0f;
+$grey: #727783;
+$saint-white: #ebf8ff;
+$void-blue: rgb(26, 41, 61);
+$void-magenta: rgb(61, 26, 48);
+$void-choco: rgb(61, 50, 26);
+
+:export {
+    voidBlack: $void-black;
+    saintWhite: $saint-white;
+    voidBlue: $void-blue;
+    voidChoco: $void-choco;
+    grey: $grey;
+}

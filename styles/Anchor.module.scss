@@ -1,0 +1,59 @@
+@use "../styles/utils/Vars.module.scss" as *;
+@use "../styles/utils/Mixins.module.scss" as *;
+
+.Anchor {
+    text-decoration: none;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    position: relative;
+    width: max-content;
+    color: $saint-white;
+    overflow: hidden;
+    @include flex(flex-start, center);
+
+    > * {
+        pointer-events: none;
+    }
+
+    .ArrowIcon {
+        width: 1em;
+        margin-left: 1rem;
+        fill: $saint-white;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 0.067rem;
+        width: 100%;
+        background: $saint-white;
+        bottom: 0.5rem;
+        left: 100%;
+        transition: 0.3s left cubic-bezier(0.69, 0.05, 0.32, 0.97);
+    }
+}
+
+.Underline {
+    &:after {
+        left: 0;
+    }
+}
+
+.Hover {
+    &:hover {
+        &:after {
+            left: 0;
+            animation: 0.3s anchorHover cubic-bezier(0.69, 0.05, 0.32, 0.97);
+        }
+    }
+}
+
+@keyframes anchorHover {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
