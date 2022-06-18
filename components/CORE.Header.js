@@ -13,7 +13,9 @@ const Header = () => {
     const [showNavMobile, setShowNavMobile] = useToggle(false)
 
     const headerTimeline = useRef(
-        gsap.timeline({ defaults: { duration: 0.8, ease: "power3.inOut" } })
+        gsap.timeline({
+            defaults: { duration: 0.8, ease: "power3.in" },
+        })
     )
     const header = useRef(null)
 
@@ -22,6 +24,10 @@ const Header = () => {
 
         window.onresize = (e) => {
             setDeviceType(e.target.innerWidth)
+        }
+
+        return () => {
+            headerTimeline.current.clear()
         }
     }, [])
 
@@ -34,15 +40,15 @@ const Header = () => {
 
         headerTimeline.current.fromTo(
             logoNameElement,
-            { y: "-20px", opacity: 0 },
-            { y: "0px", opacity: 1 }
+            { opacity: 0 },
+            { opacity: 1 }
         )
 
         if (btnMenuElement.length > 0) {
             headerTimeline.current.fromTo(
                 btnMenuElement,
-                { y: "-20px", opacity: 0 },
-                { y: "0px", opacity: 1 },
+                { opacity: 0 },
+                { opacity: 1 },
                 "-=0.4"
             )
         }

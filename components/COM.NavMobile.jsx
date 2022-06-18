@@ -30,8 +30,14 @@ const NavMobile = ({ show }) => {
                 { scaleY: 0 },
                 {
                     scaleY: 1,
+                    onStart: () => {
+                        navMobileElement.parentElement.style.mixBlendMode =
+                            "normal"
+                    },
                     onReverseComplete: () => {
                         navMobileBtn.style.pointerEvents = "all"
+                        navMobileElement.parentElement.style.mixBlendMode =
+                            "exclusion"
                     },
                 }
             )
@@ -46,21 +52,21 @@ const NavMobile = ({ show }) => {
             )
             .fromTo(
                 navInfoElement,
-                { opacity: 0, y: "-20px" },
+                { opacity: 0 },
                 {
                     opacity: 1,
-                    y: "0px",
                     stagger: 0.1,
                     onComplete: () => {
                         navMobileBtn.style.pointerEvents = "all"
                     },
                 },
-                "-=1"
+                "-=0.5"
             )
 
         return () => {
             navMobileTimeline.current.kill()
             navMobileTimeline.current.clear()
+            navMobile.current.parentElement.style.mixBlendMode = "exclusion"
         }
     }, [])
 
@@ -72,7 +78,7 @@ const NavMobile = ({ show }) => {
     return (
         <nav className={NavStyle.Nav__Mobile} ref={navMobile}>
             <p className={[NavStyle.Nav__Info, NavStyle.Nav__Status].join(" ")}>
-                CURRENTLY FREELANCE, AVAILABLE FOR INTERESTING PROJECT OR JOB
+                AVAILABLE FOR INTERESTING PROJECT OR JOB
             </p>
 
             <p

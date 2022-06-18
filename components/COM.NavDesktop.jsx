@@ -9,7 +9,7 @@ import Anchor from "./COM.Anchor"
 const NavDesktop = () => {
     const navTimeline = useRef(
         gsap.timeline({
-            defaults: { duration: 1, ease: "power3.inOut" },
+            defaults: { duration: 1, ease: "power3.in" },
         })
     )
 
@@ -23,12 +23,25 @@ const NavDesktop = () => {
         const navLinks = navElementQuery(`.${NavStyle.Nav__Link}`)
 
         navTimeline.current
-            .fromTo(navLinks, { y: "-100%" }, { y: "0%", stagger: 0.1 })
+            .fromTo(
+                navLinks,
+                { y: "100%" },
+                {
+                    y: "0%",
+                    stagger: { each: 0.1, from: "end" },
+                    ease: "power3.inOut",
+                }
+            )
             .fromTo(
                 navInfoElement,
-                { opacity: 0, y: "-20px" },
-                { opacity: 1, y: "0px", stagger: 0.1 },
-                "-=0.5"
+                {
+                    opacity: 0,
+                },
+                {
+                    opacity: 1,
+                    stagger: 0.1,
+                },
+                "-=0.8"
             )
 
         return () => {
@@ -39,7 +52,7 @@ const NavDesktop = () => {
     return (
         <nav className={NavStyle.Nav} ref={nav}>
             <p className={[NavStyle.Nav__Info, NavStyle.Nav__Status].join(" ")}>
-                CURRENTLY FREELANCE, AVAILABLE FOR INTERESTING PROJECT OR JOB
+                AVAILABLE FOR INTERESTING PROJECT OR JOB
             </p>
 
             <p
@@ -63,7 +76,7 @@ const NavDesktop = () => {
                         arrow={false}
                         cc={[NavStyle.Nav__Link]}
                     >
-                        PROJECTS
+                        PROJECT
                     </Anchor>
                 </li>
 

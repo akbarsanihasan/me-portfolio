@@ -9,10 +9,10 @@
     top: 0;
     left: 0;
     z-index: 999;
+    mix-blend-mode: exclusion;
     @include flex(space-between, center);
 
     .Logo__Name {
-        font-family: $font-Bold;
         width: 10rem;
         position: relative;
         z-index: 1;
@@ -24,7 +24,7 @@
         @include flex(space-between, center);
 
         .Nav__Info {
-            width: 12rem;
+            width: 11rem;
             font-size: 0.75rem;
             line-height: 2em;
             margin-right: 1rem;
@@ -44,7 +44,6 @@
     .Menu__Btn {
         position: relative;
         z-index: 1;
-        font-family: $font-Bold;
     }
 
     .Nav__Mobile {

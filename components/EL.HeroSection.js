@@ -18,14 +18,14 @@ const HeroSection = () => {
 
             <div className={HeroStyle.Hero__Title}>
                 <h1
-                    className={["Heading__3", HeroStyle.Hero__Title__Text].join(
+                    className={["Heading__2", HeroStyle.Hero__Title__Text].join(
                         " "
                     )}
                 >
                     CREATIVE INDEPENDENT
                 </h1>
                 <h1
-                    className={["Heading__3", HeroStyle.Hero__Title__Text].join(
+                    className={["Heading__2", HeroStyle.Hero__Title__Text].join(
                         " "
                     )}
                 >
@@ -33,12 +33,16 @@ const HeroSection = () => {
                 </h1>
             </div>
 
-            <div className={HeroStyle.Hero__Contact}>
-                <Button arrow cc={[HeroStyle.Hero__Contact__Btn]}>
-                    akbar.sani.h@gmail.com
+            <div className={HeroStyle.Hero__Btn}>
+                <Button arrow cc={[HeroStyle.Btn__Cta, HeroStyle.Contact__Me]}>
+                    CONTACT ME
                 </Button>
-                <Button arrow cc={[HeroStyle.Hero__Contact__Btn]}>
-                    +62895413526952
+
+                <Button
+                    arrow
+                    cc={[HeroStyle.Btn__Cta, HeroStyle.Contact__Project]}
+                >
+                    CHECKOUT PROJECT
                 </Button>
             </div>
 
@@ -46,12 +50,15 @@ const HeroSection = () => {
                 <Anchor link arrow={false} cc={[HeroStyle.Hero__Social__Link]}>
                     GITHUB
                 </Anchor>
+
                 <Anchor link arrow={false} cc={[HeroStyle.Hero__Social__Link]}>
                     INSTAGRAM
                 </Anchor>
+
                 <Anchor link arrow={false} cc={[HeroStyle.Hero__Social__Link]}>
                     MEDIUM
                 </Anchor>
+
                 <Anchor link arrow={false} cc={[HeroStyle.Hero__Social__Link]}>
                     BEHANCE
                 </Anchor>

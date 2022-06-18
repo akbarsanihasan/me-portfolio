@@ -5,7 +5,6 @@
     font-family: "epilogue-Regular";
     src: url("../public/fonts/Epilogue-VariableFont_wght.woff2") format("woff2");
     font-weight: 400;
-    line-height: 1.5em;
     font-display: swap;
 }
 
@@ -13,7 +12,6 @@
     font-family: "epilogue-medium";
     src: url("../public/fonts/Epilogue-VariableFont_wght.woff2") format("woff2");
     font-weight: 500;
-    line-height: 1.5em;
     font-display: swap;
 }
 
@@ -21,34 +19,33 @@
     font-family: "epilogue-bold";
     src: url("../public/fonts/Epilogue-VariableFont_wght.woff2") format("woff2");
     font-weight: 700;
-    line-height: 1.5em;
     font-display: swap;
 }
 
 @for $i from 1 through 6 {
     h#{$i},
     .Heading__#{$i} {
-        font-size: 9vw - $i;
+        font-size: 8vmin - $i;
         font-family: $font-Bold;
     }
 }
 
-@media screen and(min-width:768px) {
-    @for $i from 1 through 6 {
-        h#{$i},
-        .Heading__#{$i} {
-            font-size: 7vw - $i;
-            font-family: $font-Bold;
-        }
-    }
-}
+// @media screen and(min-width:768px) {
+//     @for $i from 1 through 6 {
+//         h#{$i},
+//         .Heading__#{$i} {
+//             font-size: 7.5vmin - $i;
+//             font-family: $font-Bold;
+//         }
+//     }
+// }
 
-@media screen and(min-width:1280px) {
-    @for $i from 1 through 6 {
-        h#{$i},
-        .Heading__#{$i} {
-            font-size: 5.5vw - $i;
-            font-family: $font-Bold;
-        }
-    }
-}
+// @media screen and(min-width:1280px) {
+//     @for $i from 1 through 6 {
+//         h#{$i},
+//         .Heading__#{$i} {
+//             font-size: 7vmin - $i;
+//             font-family: $font-Bold;
+//         }
+//     }
+// }

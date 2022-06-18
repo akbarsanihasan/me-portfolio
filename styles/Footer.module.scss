@@ -1,0 +1,83 @@
+@use "../styles/utils/Vars.module.scss" as *;
+@use "../styles/utils/Mixins.module.scss" as *;
+
+.Footer {
+    min-height: 100vh;
+    padding: 0 5%;
+    padding-top: 15vh;
+    padding-bottom: 3rem;
+    @include flex(space-evenly, $direction: column);
+
+    .Footer__Head {
+        height: 15rem;
+        width: 100%;
+        @include flex(space-between, flex-start);
+        flex-wrap: wrap;
+
+        .Footer__Head__Label {
+            @include flex(space-between);
+            font-size: 1.5rem;
+            line-height: 2em;
+            max-width: 30rem;
+
+            .Footer__Head__Mark {
+                width: 5rem;
+            }
+
+            .Footer__Head__Text {
+                flex: 1;
+            }
+        }
+    }
+
+    .Footer__Body {
+        width: 100%;
+        height: 20rem;
+        @include flex(space-evenly, $direction: column);
+
+        .Footer__Body__Cta {
+            .Btn__Cta {
+                margin: 1rem 0;
+
+                svg {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    .Footer__Foot {
+        height: 10rem;
+        min-width: 80%;
+        @include flex(space-evenly, $direction: column);
+        flex-wrap: wrap;
+
+        .Footer__Name__Label {
+            height: 3rem;
+            @include flex(space-between, $direction: column);
+
+            .Footer__Status,
+            .Footer__Name {
+                padding-bottom: 0.5rem;
+            }
+        }
+
+        .Footer__Foot__Links {
+            @include flex(space-between, flex-end);
+
+            .Footer__Social__Link {
+                margin-right: 3vw;
+            }
+        }
+    }
+}
+
+@media screen and(min-width:768px) {
+    .Footer {
+        .Footer__Foot {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

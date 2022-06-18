@@ -19,27 +19,25 @@
                 background: $saint-white;
                 margin: 0 0.7rem;
             }
-
-            // .Hero__Label__Title,
-            // .Hero__Label__Name {
-            //     letter-spacing: 0.3em;
-            // }
         }
 
         .Hero__Title {
             grid-row: 3/5;
             align-self: center;
+
             .Hero__Title__Text {
                 line-height: 1.5em;
             }
         }
 
-        .Hero__Contact {
+        .Hero__Btn {
+            max-width: 30rem;
+            justify-self: end;
             grid-row: 7/8;
             @include flex(space-between, flex-end, $direction: column);
             flex-wrap: wrap;
 
-            .Hero__Contact__Btn {
+            .Btn__Cta {
                 margin: 0.5rem 0;
 
                 span {
@@ -56,7 +54,57 @@
             flex-wrap: wrap;
 
             .Hero__Social__Link {
-                margin-right: 3vw;
+                margin-right: 4vw;
+            }
+        }
+    }
+
+    .Project__Section {
+        .Project__Section__Header {
+            width: 100%;
+
+            .Project__Title {
+                width: 100%;
+                line-height: 2em;
+
+                .Project__Title__Text {
+                    margin: 1.5rem 0;
+                    font-family: $font-Bold;
+                    line-height: 1.5em;
+                }
+
+                .Project__Title__Sub__Text {
+                    max-width: 60rem;
+                    margin: 1.5rem 0;
+                    font-family: $font-Medium;
+                    line-height: 1.5em;
+                    font-size: 4.5vw;
+                }
+            }
+
+            .Project__Section__SubTitle {
+                max-width: 55rem;
+                font-style: italic;
+                line-height: 1.5em;
+                text-transform: uppercase;
+                font-size: 4vw;
+            }
+        }
+    }
+}
+
+@media screen and(min-width:768px) {
+    .Home {
+        .Project__Section {
+            .Project__Section__Header {
+                .Project__Title {
+                    .Project__Title__Sub__Text {
+                        font-size: 2.5rem;
+                    }
+                }
+                .Project__Section__SubTitle {
+                    font-size: 1.5rem;
+                }
             }
         }
     }
