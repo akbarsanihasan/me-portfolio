@@ -183,7 +183,7 @@
 
     .About__MeDetails {
         padding: 0 5%;
-        margin-bottom: 10vmax;
+        margin-bottom: 5vmax;
 
         .AboutMe__Description {
             max-width: 40rem;
@@ -196,10 +196,10 @@
 
     .AboutMe__Profile__Picture {
         position: relative;
-        width: 70vmax;
+        width: 60vw;
         height: 30vmax;
+        transform: translateX(0%);
         background: $saint-white;
-        transform: translateX(20%);
         align-self: flex-end;
     }
 }
