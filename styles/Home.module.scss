@@ -2,108 +2,229 @@
 @use "../styles/utils/Mixins.module.scss" as *;
 
 .Home {
-    .Hero__Section {
-        height: 85vh;
-        display: grid;
-        grid-template-rows: repeat(10, 1fr);
+    min-height: 100vh;
+}
 
-        .Hero__Label {
-            justify-self: end;
-            max-width: 30rem;
-            grid-row: 1/2;
-            @include flex(space-between, center);
+.Hero__Section {
+    height: 85vh;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
 
-            .Hero__Label__Separator {
-                width: 3rem;
-                height: 0.1rem;
-                background: $saint-white;
-                margin: 0 0.7rem;
-            }
+    .Hero__Label {
+        justify-self: end;
+        max-width: 30rem;
+        grid-row: 1/2;
+        @include flex(space-between, center);
+
+        .Hero__Label__Separator {
+            width: 3rem;
+            height: 0.1rem;
+            background: $saint-white;
+            margin: 0 0.7rem;
         }
+    }
 
-        .Hero__Title {
-            grid-row: 3/5;
-            align-self: center;
+    .Hero__Title {
+        grid-row: 3/5;
+        align-self: center;
 
-            .Hero__Title__Text {
-                line-height: 1.5em;
-            }
+        .Hero__Title__Text {
+            line-height: 1.5em;
         }
+    }
 
-        .Hero__Btn {
-            max-width: 30rem;
-            justify-self: end;
-            grid-row: 7/8;
-            @include flex(space-between, flex-end, $direction: column);
-            flex-wrap: wrap;
+    .Hero__Btn {
+        max-width: 30rem;
+        justify-self: end;
+        grid-row: 7/8;
+        @include flex(space-between, flex-end, $direction: column);
+        flex-wrap: wrap;
 
-            .Btn__Cta {
-                margin: 0.5rem 0;
+        .Btn__Cta {
+            margin: 0.5rem 0;
 
-                span {
-                    svg {
-                        transform: rotate(90deg);
-                    }
+            span {
+                svg {
+                    transform: rotate(90deg);
                 }
-            }
-        }
-
-        .Hero__Social {
-            grid-row: 9/10;
-            @include flex($align: center);
-            flex-wrap: wrap;
-
-            .Hero__Social__Link {
-                margin-right: 4vw;
             }
         }
     }
 
-    .Project__Section {
-        .Project__Section__Header {
+    .Hero__Social {
+        grid-row: 9/10;
+        @include flex($align: center);
+        flex-wrap: wrap;
+
+        .Hero__Social__Link {
+            margin-right: 4vw;
+        }
+    }
+}
+
+.Project__Section {
+    .Project__Section__Header {
+        width: 100%;
+
+        .Project__Title {
             width: 100%;
+            line-height: 2em;
 
-            .Project__Title {
-                width: 100%;
-                line-height: 2em;
-
-                .Project__Title__Text {
-                    margin: 1.5rem 0;
-                    font-family: $font-Bold;
-                    line-height: 1.5em;
-                }
-
-                .Project__Title__Sub__Text {
-                    max-width: 60rem;
-                    margin: 1.5rem 0;
-                    font-family: $font-Medium;
-                    line-height: 1.5em;
-                    font-size: 4.5vw;
-                }
+            .Project__Title__Text {
+                margin: 2rem 0;
+                font-family: $font-Bold;
+                line-height: 1.5em;
             }
 
-            .Project__Section__SubTitle {
-                max-width: 55rem;
-                font-style: italic;
+            .Project__Title__Sub__Text {
+                max-width: 60rem;
+                margin: 2rem 0;
+                font-family: $font-Medium;
                 line-height: 1.5em;
-                text-transform: uppercase;
-                font-size: 4vw;
+                font-size: 1.8rem;
+            }
+        }
+
+        .Project__Section__SubTitle {
+            max-width: 50rem;
+            font-style: italic;
+            line-height: 1.5em;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+        }
+    }
+
+    .Project__Showcase {
+        margin-top: 10vmax;
+
+        .Project__Item {
+            margin-top: 15vmax;
+            @include flex(space-between, $direction: column);
+
+            .Project__Item__Info {
+                max-width: 40rem;
+
+                .Project__Title,
+                .Project__Desc {
+                    line-height: 1.5em;
+                    text-transform: uppercase;
+                    margin: 1rem 0;
+                }
+
+                .Project__Desc {
+                    font-size: 1.5rem;
+                }
+
+                .Project__Item__Link {
+                    svg {
+                        height: 3rem;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+            .Project__Item__Img__Wrapper {
+                width: 90vw;
+                height: 50vmax;
+                position: relative;
+                background: $saint-white;
+                margin: 2rem 0;
             }
         }
     }
 }
 
-@media screen and(min-width:768px) {
-    .Home {
-        .Project__Section {
-            .Project__Section__Header {
-                .Project__Title {
-                    .Project__Title__Sub__Text {
-                        font-size: 2.5rem;
-                    }
+.Playground__Section {
+    margin-top: 10vmax;
+
+    .Playground__Story {
+        .Playground__Story__Title {
+            max-width: 60rem;
+
+            .Playground__Story__Text {
+                line-height: 2em;
+                font-size: 1.4rem;
+                margin: 2rem 0;
+
+                .Playground__Story__Highlight {
+                    font-size: 2rem;
+                    font-family: $font-Bold;
                 }
-                .Project__Section__SubTitle {
-                    font-size: 1.5rem;
+            }
+        }
+    }
+
+    .Playground__Showcase {
+        margin-top: 10vmax;
+        width: 100%;
+        min-height: 40vmax;
+        position: relative;
+        overflow-x: hidden;
+
+        .Playground__Showcase__Item__Wrapper {
+            @include flex(space-between, center);
+            height: 100%;
+            position: absolute;
+
+            .Playground__Showcase__Item {
+                height: 30vmax;
+                width: 30vmax;
+                background: $saint-white;
+                margin-right: 3rem;
+            }
+        }
+    }
+}
+
+.About__Me {
+    margin: 15vmax 0;
+    min-height: 50vmax;
+    overflow: hidden;
+    @include flex(space-between, $direction: column);
+
+    .About__MeDetails {
+        padding: 0 5%;
+        margin-bottom: 10vmax;
+
+        .AboutMe__Description {
+            max-width: 40rem;
+            line-height: 2em;
+            margin: 1.5rem 0;
+            font-family: $font-Regular;
+            font-size: 1.3rem;
+        }
+    }
+
+    .AboutMe__Profile__Picture {
+        position: relative;
+        width: 70vmax;
+        height: 30vmax;
+        background: $saint-white;
+        transform: translateX(20%);
+        align-self: flex-end;
+    }
+}
+
+@media screen and(min-width:1280px) {
+    .Project__Section {
+        .Project__Section__Header {
+            .Project__Title {
+                .Project__Title__Sub__Text {
+                    font-size: 2.5rem;
+                }
+            }
+            .Project__Section__SubTitle {
+                font-size: 1.5rem;
+            }
+        }
+
+        .Project__Showcase {
+            .Project__Item {
+                flex-direction: row;
+
+                .Project__Item__Img__Wrapper {
+                    width: 60vw;
+                    height: 25vw;
+                    margin: 0;
                 }
             }
         }

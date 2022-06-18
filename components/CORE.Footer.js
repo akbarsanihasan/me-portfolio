@@ -5,7 +5,7 @@ import Button from "./COM.Button"
 
 const Footer = () => {
     return (
-        <footer className={FooterStyle.Footer}>
+        <footer className={FooterStyle.Footer} data-scroll-section>
             <div className={FooterStyle.Footer__Head}>
                 <div className={FooterStyle.Footer__Head__Label}>
                     <span className={FooterStyle.Footer__Head__Mark}>? /</span>
@@ -24,7 +24,7 @@ const Footer = () => {
 
             <div className={FooterStyle.Footer__Body}>
                 <h1 className={FooterStyle.Footer__Body__Title}>
-                    LET'S WORK TOGETHER
+                    SEND ME A MESSAGE
                 </h1>
 
                 <div className={FooterStyle.Footer__Body__Cta}>

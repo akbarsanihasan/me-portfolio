@@ -1,5 +1,7 @@
 import ProjectStyle from "../styles/Home.module.scss"
 
+import ProjectItem from "../components/COM.ProjectItem"
+
 const ProjectSection = () => {
     return (
         <section
@@ -27,12 +29,17 @@ const ProjectSection = () => {
                         " "
                     )}
                 >
-                    " I create this with my own two hands, it's covered in my
+                    " I create this with my own two hands, it's covered with my
                     blood sweat, tears and other fluids " - Mabel pines
                 </blockquote>
             </div>
 
-            <div className={ProjectStyle.Project__Showcase}></div>
+            <div className={ProjectStyle.Project__Showcase}>
+                <ProjectItem />
+                <ProjectItem />
+                <ProjectItem />
+                <ProjectItem />
+            </div>
         </section>
     )
 }

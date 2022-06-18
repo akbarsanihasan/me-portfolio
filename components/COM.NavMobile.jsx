@@ -37,7 +37,7 @@ const NavMobile = ({ show }) => {
                     onReverseComplete: () => {
                         navMobileBtn.style.pointerEvents = "all"
                         navMobileElement.parentElement.style.mixBlendMode =
-                            "exclusion"
+                            "difference"
                     },
                 }
             )

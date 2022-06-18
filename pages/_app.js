@@ -14,7 +14,11 @@ function MyApp({ Component, pageProps }) {
 
     return (
         <LocomotiveScrollProvider
-            options={{ smooth: true }}
+            options={{
+                smooth: true,
+                smartphone: { smooth: true },
+                tablet: { snooth: true },
+            }}
             containerRef={scrollContainer}
             watch={[asPath]}
             location={asPath}
