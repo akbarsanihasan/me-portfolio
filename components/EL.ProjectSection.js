@@ -29,8 +29,8 @@ const ProjectSection = () => {
                         " "
                     )}
                 >
-                    " I create this with my own two hands, it's covered with my
-                    blood sweat, tears and other fluids " - Mabel pines
+                    {`" I create this with my own two hands, it's covered with my
+                    blood sweat, tears and other fluids " - Mabel pines`}
                 </blockquote>
             </div>
 

@@ -11,7 +11,7 @@ const Playground = () => {
             >
                 <div className={PlaygroundStyle.Playground__Story__Title}>
                     <p className={PlaygroundStyle.Playground__Story__Text}>
-                        WHAT DO I DO WHEN I'M NOT CODING ?
+                        {`WHAT DO I DO WHEN I'M NOT CODING ?`}
                     </p>
                     <p className={PlaygroundStyle.Playground__Story__Text}>
                         THE ANSWER IS{" "}
@@ -25,14 +25,14 @@ const Playground = () => {
                         TO KEEP MY SKILL SHARP.
                     </p>
                     <p className={PlaygroundStyle.Playground__Story__Text}>
-                        USUALLY I'M EXPLORING NEW TYPOGRAPHY, LAYOUT, ANIMATION
+                        {`USUALLY I'M EXPLORING NEW TYPOGRAPHY, LAYOUT, ANIMATION
                         AND SOMETIMES I DO UI DESIGN, TRYING NEW LIBRARY, NEW
-                        FRAMEWORK, NEW TECHNOLOGY.
+                        FRAMEWORK, NEW TECHNOLOGY.`}
                     </p>
                     <p className={PlaygroundStyle.Playground__Story__Text}>
-                        AND SOMETIMES I'M TRYING NEW PROGRAMMING LANGUAGE OR A
+                        {`AND SOMETIMES I'M TRYING NEW PROGRAMMING LANGUAGE OR A
                         WHOLE NEW DIFFERENT WORLD SUCH GAME DEVELOPMENT, OR
-                        MOBILE APP DEVELOPMENT.
+                        MOBILE APP DEVELOPMENT.`}
                     </p>
                     <p className={PlaygroundStyle.Playground__Story__Text}>
                         I CALLED THIS ACTIVITY{" "}

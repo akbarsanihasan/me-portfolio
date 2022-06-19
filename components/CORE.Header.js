@@ -27,7 +27,7 @@ const Header = () => {
         }
 
         return () => {
-            headerTimeline.current.clear()
+            window.onresize = null
         }
     }, [])
 
@@ -51,6 +51,10 @@ const Header = () => {
                 { opacity: 1 },
                 "-=0.4"
             )
+        }
+
+        return () => {
+            headerTimeline.current.clear()
         }
     }, [])
 
